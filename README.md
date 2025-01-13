@@ -1,2 +1,2 @@
 # MCM
-Latex
+Latex源文件
