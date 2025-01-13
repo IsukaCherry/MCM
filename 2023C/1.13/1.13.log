@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.10.30)  13 JAN 2025 17:09
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.10.30)  13 JAN 2025 22:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -753,37 +753,40 @@ Package: blx-case-expl3 2023/03/05 v3.19 expl3 case changing code for biblatex
 ))
 \@quotelevel=\count449
 \@quotereset=\count450
-LaTeX Font Info:    Trying to load font information for T1+ppl on input line 49.
+LaTeX Font Info:    Trying to load font information for T1+ppl on input line 50.
  (c:/texlive/2023/texmf-dist/tex/latex/psnfss/t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
+) (./1.13.aux
+
+LaTeX Warning: Label `Figure2' multiply defined.
+
 )
-No file 1.13.aux.
 \openout1 = `1.13.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 49.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 49.
-(c:/texlive/2023/texmf-dist/tex/latex/base/ts1cmr.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 50.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 50.
+ (c:/texlive/2023/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
 \c@lstlisting=\count451
 
 *geometry* driver: auto-detecting
@@ -820,16 +823,14 @@ LaTeX Font Info:    ... okay on input line 49.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 49.
+Package hyperref Info: Link coloring OFF on input line 50.
+(./1.13.out) (./1.13.out)
 \@outlinefile=\write5
 \openout5 = `1.13.out'.
 
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
-
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
-(c:/texlive/2023/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+ (c:/texlive/2023/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 File: english.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
 )
 Package biblatex Info: XeTeX detected.
@@ -842,22 +843,31 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file '1.13.bbl' not found.
 
 No file 1.13.bbl.
-Package biblatex Info: Reference section=0 on input line 49.
-Package biblatex Info: Reference segment=0 on input line 49.
+Package biblatex Info: Reference section=0 on input line 50.
+Package biblatex Info: Reference segment=0 on input line 50.
 [1
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 58.
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 59.
  (c:/texlive/2023/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
+) (./1.13.toc
+LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
+ (c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-No file 1.13.toc.
-\tf@toc=\write6
-\openout6 = `1.13.toc'.
-
-
-LaTeX Warning: Reference `LastPage' on page 1 undefined on input line 62.
-
+LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
+ (c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 2.
+ (c:/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 2.
+ (c:/texlive/2023/texmf-dist/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -865,15 +875,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[1]
-File: figure/2.png Graphic file (type bmp)
-<figure/2.png>
-LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 89.
- (c:/texlive/2023/texmf-dist/tex/latex/psnfss/ts1ppl.fd
-File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
-)
+[1])
+\tf@toc=\write6
+\openout6 = `1.13.toc'.
 
-LaTeX Warning: Reference `LastPage' on page 2 undefined on input line 94.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -883,25 +888,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [2]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 130.
- (c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+File: figure/F1.png Graphic file (type bmp)
+<figure/F1.png>
+LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 90.
+ (c:/texlive/2023/texmf-dist/tex/latex/psnfss/ts1ppl.fd
+File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 130.
- (c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 130.
- (c:/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
-File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 130.
- (c:/texlive/2023/texmf-dist/tex/latex/base/ulasy.fd
-File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-)
-
-LaTeX Warning: Reference `LastPage' on page 3 undefined on input line 151.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -910,16 +902,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [3]
-Underfull \hbox (badness 10000) in alignment at lines 180--188
-[][][][] 
+Underfull \hbox (badness 10000) in alignment at lines 112--125
+[][][][]
  []
-
-
-LaTeX Warning: Empty bibliography on input line 193.
-
-[4] [5]
-
-LaTeX Warning: Reference `LastPage' on page 6 undefined on input line 215.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -928,7 +913,57 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[6
+[4]
+
+LaTeX Warning: Citation '1' on page 5 undefined on input line 177.
+
+File: figure/F2.pdf Graphic file (type pdf)
+<use figure/F2.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: figure/F3.pdf Graphic file (type pdf)
+<use figure/F3.pdf>
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[5]
+Missing character: There is no 、 ("3001) in font pplr8t!
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[6]
+File: figure/F4.png Graphic file (type bmp)
+<figure/F4.png>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[7]
+
+LaTeX Warning: Empty bibliography on input line 305.
+
+[8]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[9
 
 ] 
 enddocument/afterlastpage: lastpage setting LastPage.
@@ -937,19 +972,10 @@ enddocument/afterlastpage: lastpage setting LastPage.
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
-
-Package rerunfilecheck Warning: File `1.13.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `1.13.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  33F883664D46FD730D2FB85F254161BC;2107.
-
-Package lastpage Warning: Rerun to get the references right on input line 215.
-
+Package rerunfilecheck Info: File `1.13.out' has not changed.
+(rerunfilecheck)             Checksum: 231F9F6884EA985297F3E277518A18E4;3543.
 
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                1.13
@@ -960,12 +986,12 @@ Package logreq Info: Writing requests to '1.13.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 21874 strings out of 478630
- 377986 string characters out of 5847729
- 1850012 words of memory out of 5000000
- 41607 multiletter control sequences out of 15000+600000
- 542125 words of font info for 88 fonts, out of 8000000 for 9000
+ 22105 strings out of 478630
+ 382346 string characters out of 5847729
+ 1853012 words of memory out of 5000000
+ 41827 multiletter control sequences out of 15000+600000
+ 543896 words of font info for 90 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 87i,12n,90p,1151b,3688s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 87i,13n,90p,1151b,3688s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 1.13.pdf (7 pages).
+Output written on 1.13.pdf (10 pages).

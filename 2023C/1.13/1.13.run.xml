@@ -82,5 +82,8 @@
     <requires type="dynamic">
       <file>1.13.bcf</file>
     </requires>
+    <requires type="editable">
+      <file>ref.bib</file>
+    </requires>
   </external>
 </requests>

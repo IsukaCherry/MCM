@@ -27,7 +27,8 @@
 \usepackage{lastpage}  % 引入 lastpage 宏包
 \usepackage{lipsum}  % 导入生成段落的宏包
 \usepackage[hyperref=true,style=ieee]{biblatex}  % biblatex参考文献宏包
-% \addbibresource{ref.bib}  % 添加引用文献bib源
+\addbibresource{ref.bib}  % 添加引用文献bib源
+\newcommand{\upcite}[1]{\textsuperscript{\cite{#1}}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -78,8 +79,8 @@ players guess a country or region). The rules for the hard mode are as follows.
 \begin{figure}[htbp]  % 图片
 \small
 \centering  % 居中
-\includegraphics[width=14cm]{figure/2.png}  % 引入图片源
-\caption{Rules} \label{Figure1}  % 标题与标签
+\includegraphics[width=14cm]{figure/F1.png}  % 引入图片源
+\caption{Game  Rules} \label{Figure1}  % 标题与标签
 \end{figure}  % 图片结束
 
 \subsection{Restatement of the Problem}
@@ -99,8 +100,134 @@ We need to analyze the data provided by The New York Times and address the follo
 \subsection{Our Work}
 
 \section{Assumptions and Notations}  % 二级标题
+\subsection{Assumptions}
 
-\section{Model 1}  % 一级标题
+
+\subsection{Notations}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%% 三线表 %%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[!h]  % 表格
+        \tabcolsep 84pt % 列间距
+        \begin{tabular*}{\textwidth}{cccc}  % tabular*环境
+        \toprule  % 顶线
+        Symbol & Decription \\
+        \midrule  % 中线
+        $f_{t}$ & forget gate  \\
+        $i_{t}$ & input gate  \\
+        $o_{t}$ & output gate  \\
+        $h_{t}$ & hidden state  \\
+        $c_{t}$ & cell state  \\
+        $x_{t}$ & LSTM's input  \\
+        $W_{f,i,c,o}$ & Bias  \\
+        $b_{f,i,c,o}$ & Weight Matrix \\
+        \bottomrule  % 底线
+        \end{tabular*}  % tabular*环境结束
+        \end{table}  % 表格结束
+%%%%%%%%%%%%%%%%%%%%%% 三线表结束 %%%%%%%%%%%%%%%%%%%%%%
+\section{Model 1-Prediction Model based on LSTM}  % 一级标题
+
+By analyzing \textbf{$Problem\_C\_Data\_Wordle.xlsx$}, we found that the Wordle data is 
+collected and analyzed daily. By analyzing this data, we can clearly 
+see that the results of Wordle change over time and exhibit time dependence. 
+Therefore, we chose the LSTM algorithm, which is specifically designed to 
+capture and utilize long-term dependencies in sequential data. This fits 
+well with the time-varying Wordle results presented in the problem. We 
+ultimately used this algorithm to simulate the data for March 1, 2023.
+
+\subsection{Description of LSTM}
+LSTM is a neural network structure that can effectively capture long-term dependencies 
+in time series data. By introducing gating mechanisms, it can selectively retain and 
+forget information, solving the vanishing and exploding gradient problems inherent in 
+raditional RNNs. Although LSTM is computationally expensive, it performs excellently in 
+many tasks, especially in processing sequential data. Its main features are the memory 
+cell and gating mechanisms, which introduce three gates: the forget gate, input gate, 
+and output gate, allowing for selective retention or discarding of data. Its update equations 
+are as follows.
+\begin{equation} 
+\begin{aligned}
+        f_{t} &=\sigma(W_{f}\cdot [h_{t-1},x_{t}]+b_{f})\\
+        i_{t} &\sigma(W_{i}\cdot [h_{t-1},x_{t}]+b_{i}) \\
+        o_{t} &=\sigma(W_{o}\cdot [h_{t-1},x_{t}]+b_{o}) \\
+        \tilde{c_{t}} &=tanh(W_{c}\cdot [h_{t-1},x_{t}]+b_{c})\\
+        c_{t} &=f_{t}\cdot c_{t-1}+i_{t}\cdot \tilde{c_{t}} \\
+        h_{t} &=o_{t}\cdot tanh(c_{t})
+\end{aligned}
+\end{equation} 
+       
+
+\subsection{Prediction on March 1,2023}
+
+\subsubsection{Data settings}
+Machine learning algorithms are very sensitive to the input data values. To prevent certain results
+ (e.g., Christmas 2022) from being significantly smaller or larger than other features, which 
+ could cause biases in the algorithm's processing of data, we applied a formula to temporarily 
+ scale all data to the range [0, 1] to facilitate computation. The formula is as follows (Formula 7).
+ \begin{equation} 
+        x_{scaled} =\frac{x-min(x)}{max(x)-min(x)} 
+\end{equation} 
+
+We then divided the given data into training and test sets. After analyzing the data, 
+we found that the results of Wordle generally showed a decreasing trend. When the proportion of 
+the training set was not particularly large (7:3 or even 8:2), due to the lack of early and late 
+results, the final predicted result would be much higher or lower than the actual data from 
+December 31, 2022. Therefore, we chose a 9:1 data split. We also decided to use data from the 
+previous month (30 days) to predict the results. It is well known that during statutory holidays, 
+the statistics may significantly drop because people need to spend time with family and friends. 
+According to website data\upcite{1}, in high-GDP countries, there are about 12 statutory 
+holidays a year on average, which means that there is almost always one holiday per month. Therefore, 
+using the previous 30 days of data would almost cover a holiday, leading to results that better 
+reflect the actual situation. Finally, we used the formula below (Formula 8) for inverse normalization 
+to restore the data to its original form.
+
+\begin{equation} 
+        x_{original} =x_{scaled}\times (max(x)-min(x))+min(x)
+\end{equation}  
+
+\subsubsection{Results on March 1,2023}
+After setting the parameters, we ran the model. Since the data for March 1 is about 60 days after December 31, 
+we first used data from October 1 to December 31 (about 90 days) for preliminary fitting to observe the model's 
+prediction results. The specific data is shown in Figures 2. 
+
+\begin{figure}[h]  % 图片
+        \small
+        \centering  % 居中
+        \includegraphics[width=12cm]{figure/F2.pdf}  % 引入图片源
+        \caption{Actual vs Predicted Values} \label{Figure2}  % 标题与标签
+\end{figure}  % 图片结束
+We found that the results of this 
+fitting had a good correlation with the actual values, so we also used the model to predict the next 90 days. 
+The results are shown in Figure 3.
+\begin{figure}[h]  % 图片
+        \small
+        \centering  % 居中
+        \includegraphics[width=12cm]{figure/F3.pdf}  % 引入图片源
+        \caption{Historical Data and Future Predictions} \label{Figure2}  % 标题与标签
+\end{figure}  % 图片结束
+
+
+We also tracked the changes in training loss and validation loss over time. As the number of iterations increased, 
+the training loss gradually decreased, indicating that our model was increasingly fitting the training data and 
+learning the underlying patterns. Eventually, it stabilized around 2、% at the 10th iteration, suggesting that the 
+model had converged and reached an optimal point. To prevent overfitting, we also closely monitored the changes 
+in validation loss. Initially, we observed that the validation loss increased during the early iterations, likely 
+due to the model adapting to the training data. However, after four iterations, it started to decrease, showing 
+signs of generalization. By the 10th iteration, the validation loss had also stabilized, indicating that the model 
+was no longer overfitting. We took the error value at the 10th iteration as the final result, and the data plot is 
+shown in Figure 4, reflecting the training dynamics throughout the process.
+
+\begin{figure}[h]  % 图片
+        \small
+        \centering  % 居中
+        \includegraphics[width=12cm]{figure/F4.png}  % 引入图片源
+        \caption{Model Loss During Training} \label{Figure4}  % 标题与标签
+\end{figure}  % 图片结束
+
+Based on our model, the predicted range for the number of reported results on March 1, 2023, is:
+\begin{equation}  % 公式，独占一行、居中，自动编号
+        x_{March1,2023} =21137\pm 2.01425\%
+        \end{equation}  % 公式结束
+\subsection{Relationship of Word Attributes and Scores from Percentage}
 
 \section{Model 2}  % 一级标题
 
@@ -172,24 +299,9 @@ E = mc^2
 %\end{figure}  % 图片结束
 %%%%%%%%%%%%%%%%%%%%%% 并排图结束 %%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%% 三线表 %%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}[!t]  % 表格
-\caption{Caption}  % 标题
-\label{tab1}  % 标签
-\tabcolsep 42pt % 列间距
-\begin{tabular*}{\textwidth}{cccc}  % tabular*环境
-\toprule  % 顶线
-Title a & Title b & Title c & Title d \\
-\midrule  % 中线
-Aaa & Bbb & Ccc & Ddd \\
-Aaa & Bbb & Ccc & Ddd \\
-Aaa & Bbb & Ccc & Ddd \\
-\bottomrule  % 底线
-\end{tabular*}  % tabular*环境结束
-\end{table}  % 表格结束
-%%%%%%%%%%%%%%%%%%%%%% 三线表结束 %%%%%%%%%%%%%%%%%%%%%%
-
-
+\begin{thebibliography}{99}
+        \bibitem{1} https://holidays-calendar.net/
+\end{thebibliography}
 \printbibliography  % 打印引用文献列表
 
 %%%%%%%%%%%%%%%%%%%%%%% 正文结束 %%%%%%%%%%%%%%%%%%%%%%%
