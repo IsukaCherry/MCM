@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2025.1.14)  15 JAN 2025 19:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2025.1.14)  15 JAN 2025 20:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -760,7 +760,22 @@ LaTeX Font Info:    Trying to load font information for T1+ppl on input line 50.
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
 ) (./1.15.aux
 
+LaTeX Warning: Label `Figure1' multiply defined.
+
+
+LaTeX Warning: Label `Figure5' multiply defined.
+
+
+LaTeX Warning: Label `Figure6' multiply defined.
+
+
 LaTeX Warning: Label `Figure2' multiply defined.
+
+
+LaTeX Warning: Label `Figure5' multiply defined.
+
+
+LaTeX Warning: Label `Figure6' multiply defined.
 
 
 LaTeX Warning: Label `Figure6' multiply defined.
@@ -928,8 +943,34 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [4]
+<figure/C.png, id=181, 1445.4pt x 813.0375pt>
+File: figure/C.png Graphic file (type png)
+<use figure/C.png>
+Package pdftex.def Info: figure/C.png  used on input line 156.
+(pdftex.def)             Requested size: 341.43306pt x 192.0563pt.
+<./figure//ForgetGate.png, id=182, 1445.4pt x 813.0375pt>
+File: ./figure//ForgetGate.png Graphic file (type png)
+<use ./figure//ForgetGate.png>
+Package pdftex.def Info: ./figure//ForgetGate.png  used on input line 175.
+(pdftex.def)             Requested size: 199.16928pt x 112.0256pt.
+<./figure//InputGate.png, id=183, 1445.4pt x 813.0375pt>
+File: ./figure//InputGate.png Graphic file (type png)
+<use ./figure//InputGate.png>
+Package pdftex.def Info: ./figure//InputGate.png  used on input line 181.
+(pdftex.def)             Requested size: 199.16928pt x 112.0256pt.
+<./figure//OutputGate.png, id=184, 1445.4pt x 813.0375pt>
+File: ./figure//OutputGate.png Graphic file (type png)
+<use ./figure//OutputGate.png>
+Package pdftex.def Info: ./figure//OutputGate.png  used on input line 187.
+(pdftex.def)             Requested size: 199.16928pt x 112.0256pt.
+<./figure//CellState.png, id=185, 1445.4pt x 813.0375pt>
+File: ./figure//CellState.png Graphic file (type png)
+<use ./figure//CellState.png>
+Package pdftex.def Info: ./figure//CellState.png  used on input line 193.
+(pdftex.def)             Requested size: 199.16928pt x 112.0256pt.
 
-LaTeX Warning: Citation '1' on page 5 undefined on input line 183.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -938,50 +979,52 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[5]
+[5 <./figure/C.png (PNG copy)>]
+
+LaTeX Warning: Citation '1' on page 6 undefined on input line 214.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[6 <./figure//ForgetGate.png (PNG copy)> <./figure//InputGate.png (PNG copy)> <./figure//OutputGate.png (PNG copy)> <./figure//CellState.png (PNG copy)>]
 
 pdfTeX warning: pdflatex.exe (file ./figure/F2.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figure/F2.pdf, id=192, 963.6pt x 542.025pt>
+<figure/F2.pdf, id=208, 963.6pt x 542.025pt>
 File: figure/F2.pdf Graphic file (type pdf)
 <use figure/F2.pdf>
-Package pdftex.def Info: figure/F2.pdf  used on input line 201.
+Package pdftex.def Info: figure/F2.pdf  used on input line 232.
 (pdftex.def)             Requested size: 512.1496pt x 288.09067pt.
 
-Overfull \hbox (42.39458pt too wide) in paragraph at lines 201--202
+Overfull \hbox (42.39458pt too wide) in paragraph at lines 232--233
  [][] 
  []
 
 
 
 pdfTeX warning: pdflatex.exe (file ./figure/F3.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figure/F3.pdf, id=193, 963.6pt x 542.025pt>
+<figure/F3.pdf, id=209, 963.6pt x 542.025pt>
 File: figure/F3.pdf Graphic file (type pdf)
 <use figure/F3.pdf>
-Package pdftex.def Info: figure/F3.pdf  used on input line 210.
+Package pdftex.def Info: figure/F3.pdf  used on input line 241.
 (pdftex.def)             Requested size: 512.1496pt x 288.09067pt.
 
-Overfull \hbox (42.39458pt too wide) in paragraph at lines 210--211
+Overfull \hbox (42.39458pt too wide) in paragraph at lines 241--242
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[6 <./figure/F2.pdf>]
-<figure/F4.png, id=208, 1003.75pt x 602.25pt>
+<figure/F4.png, id=210, 1003.75pt x 602.25pt>
 File: figure/F4.png Graphic file (type png)
 <use figure/F4.png>
-Package pdftex.def Info: figure/F4.png  used on input line 228.
+Package pdftex.def Info: figure/F4.png  used on input line 259.
 (pdftex.def)             Requested size: 398.33858pt x 239.00267pt.
 
-
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
@@ -991,20 +1034,29 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[7 <./figure/F3.pdf>]
+[7 <./figure/F2.pdf>]
 
-LaTeX Warning: Citation '2' on page 8 undefined on input line 252.
+LaTeX Warning: Citation '2' on page 8 undefined on input line 283.
 
-<./figure//F5.png, id=224, 642.4pt x 481.8pt>
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[8 <./figure/F3.pdf>]
+<./figure//F5.png, id=239, 642.4pt x 481.8pt>
 File: ./figure//F5.png Graphic file (type png)
 <use ./figure//F5.png>
-Package pdftex.def Info: ./figure//F5.png  used on input line 268.
+Package pdftex.def Info: ./figure//F5.png  used on input line 299.
 (pdftex.def)             Requested size: 199.16928pt x 149.37851pt.
-<./figure//F6.png, id=225, 642.4pt x 481.8pt>
+<./figure//F6.png, id=240, 642.4pt x 481.8pt>
 File: ./figure//F6.png Graphic file (type png)
 <use ./figure//F6.png>
-Package pdftex.def Info: ./figure//F6.png  used on input line 274.
+Package pdftex.def Info: ./figure//F6.png  used on input line 305.
 (pdftex.def)             Requested size: 199.16928pt x 149.37851pt.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1015,21 +1067,21 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[8 <./figure/F4.png>]
-<./figure//i2.png, id=234, 642.4pt x 481.8pt>
+[9 <./figure/F4.png>]
+<./figure//i2.png, id=249, 642.4pt x 481.8pt>
 File: ./figure//i2.png Graphic file (type png)
 <use ./figure//i2.png>
-Package pdftex.def Info: ./figure//i2.png  used on input line 301.
+Package pdftex.def Info: ./figure//i2.png  used on input line 332.
 (pdftex.def)             Requested size: 142.26378pt x 106.69473pt.
-<./figure//i1.png, id=235, 642.4pt x 481.8pt>
+<./figure//i1.png, id=250, 642.4pt x 481.8pt>
 File: ./figure//i1.png Graphic file (type png)
 <use ./figure//i1.png>
-Package pdftex.def Info: ./figure//i1.png  used on input line 307.
+Package pdftex.def Info: ./figure//i1.png  used on input line 338.
 (pdftex.def)             Requested size: 142.26378pt x 106.69473pt.
-<./figure//i3.png, id=236, 642.4pt x 481.8pt>
+<./figure//i3.png, id=251, 642.4pt x 481.8pt>
 File: ./figure//i3.png Graphic file (type png)
 <use ./figure//i3.png>
-Package pdftex.def Info: ./figure//i3.png  used on input line 311.
+Package pdftex.def Info: ./figure//i3.png  used on input line 342.
 (pdftex.def)             Requested size: 142.26378pt x 106.69473pt.
 
 
@@ -1037,7 +1089,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 File: ./figure//F6.png Graphic file (type png)
 <use ./figure//F6.png>
-Package pdftex.def Info: ./figure//F6.png  used on input line 319.
+Package pdftex.def Info: ./figure//F6.png  used on input line 350.
 (pdftex.def)             Requested size: 398.33858pt x 298.76436pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1049,7 +1101,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[9 <./figure//F5.png> <./figure//F6.png>]
+[10 <./figure//F5.png> <./figure//F6.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1057,11 +1109,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[10 <./figure//i2.png> <./figure//i1.png> <./figure//i3.png>]
+[11 <./figure//i2.png> <./figure//i1.png> <./figure//i3.png>]
 
-LaTeX Warning: Empty bibliography on input line 367.
+LaTeX Warning: Empty bibliography on input line 398.
 
-[11]
+[12]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1069,7 +1121,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[12
+[13
 
 ] 
 enddocument/afterlastpage: lastpage setting LastPage.
@@ -1092,18 +1144,18 @@ Package logreq Info: Writing requests to '1.15.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 22633 strings out of 476025
- 388452 string characters out of 5794015
- 1862382 words of memory out of 5000000
- 42607 multiletter control sequences out of 15000+600000
+ 22682 strings out of 476025
+ 389510 string characters out of 5794015
+ 1861382 words of memory out of 5000000
+ 42645 multiletter control sequences out of 15000+600000
  550729 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  90i,13n,90p,1215b,855s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on 1.15.pdf (13 pages, 554169 bytes).
+Output written on 1.15.pdf (14 pages, 873138 bytes).
 PDF statistics:
- 340 PDF objects out of 1000 (max. 8388607)
- 278 compressed objects within 3 object streams
- 61 named destinations out of 1000 (max. 500000)
- 270 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 356 PDF objects out of 1000 (max. 8388607)
+ 288 compressed objects within 3 object streams
+ 67 named destinations out of 1000 (max. 500000)
+ 295 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -80,7 +80,7 @@ players guess a country or region). The rules for the hard mode are as follows.
 \small
 \centering  % 居中
 \includegraphics[width=14cm]{figure/F1.png}  % 引入图片源
-\caption{Game  Rules} \label{Figure1}  % 标题与标签
+\caption{Game Rules} \label{Figure1}  % 标题与标签
 \end{figure}  % 图片结束
 
 \subsection{Restatement of the Problem}
@@ -149,21 +149,52 @@ raditional RNNs. Although LSTM is computationally expensive, it performs excelle
 many tasks, especially in processing sequential data. Its main features are the memory 
 cell and gating mechanisms, which introduce three gates: the forget gate, input gate, 
 and output gate, allowing for selective retention or discarding of data. Its update equations 
-are as follows.
+and figures are as follows.
+\begin{figure}[htbp]  % 图片
+        \small
+        \centering  % 居中
+        \includegraphics[width=12cm]{figure/C.png}  % 引入图片源
+        \caption{PrincipleGraph} \label{Figure1}  % 标题与标签
+        \end{figure}  % 图片结束\
+
 \begin{equation} 
 \begin{aligned}
         f_{t} &=\sigma(W_{f}\cdot [h_{t-1},x_{t}]+b_{f})\\
-        i_{t} &\sigma(W_{i}\cdot [h_{t-1},x_{t}]+b_{i}) \\
+        i_{t} &=\sigma(W_{i}\cdot [h_{t-1},x_{t}]+b_{i}) \\
         o_{t} &=\sigma(W_{o}\cdot [h_{t-1},x_{t}]+b_{o}) \\
         \tilde{c_{t}} &=tanh(W_{c}\cdot [h_{t-1},x_{t}]+b_{c})\\
         c_{t} &=f_{t}\cdot c_{t-1}+i_{t}\cdot \tilde{c_{t}} \\
         h_{t} &=o_{t}\cdot tanh(c_{t})
 \end{aligned}
 \end{equation} 
-       
 
+\begin{figure}[h]  % 图片
+        \centering  % 居中
+        \begin{minipage}[c]{0.48\textwidth}  % 子页
+        \centering  % 居中
+        \includegraphics[width=7cm]{ForgetGate.png}  % 引入图片源
+        \caption{ForgetGate} \label{Figure5}  % 标题与标签
+        \end{minipage}  % 子页结束
+        \hspace{0.02\textwidth}
+        \begin{minipage}[c]{0.48\textwidth}  % 子页
+        \centering  % 居中
+        \includegraphics[width=7cm]{InputGate.png}  % 引入图片源
+        \caption{InputGate} \label{Figure6}  % 标题与标签
+        \end{minipage}  % 子页结束
+        \hspace{0.02\textwidth}
+        \begin{minipage}[c]{0.48\textwidth}  % 子页
+        \centering  % 居中
+        \includegraphics[width=7cm]{OutputGate.png}  % 引入图片源
+        \caption{OutputGate} \label{Figure5}  % 标题与标签
+        \end{minipage}  % 子页结束
+        \hspace{0.02\textwidth}
+        \begin{minipage}[c]{0.48\textwidth}  % 子页
+        \centering  % 居中
+        \includegraphics[width=7cm]{CellState.png}  % 引入图片源
+        \caption{CellState} \label{Figure6}  % 标题与标签
+        \end{minipage}  % 子页结束
+\end{figure}  % 图片结束
 \subsection{Prediction on March 1,2023}
-
 \subsubsection{Data settings}
 Machine learning algorithms are very sensitive to the input data values. To prevent certain results
  (e.g., Christmas 2022) from being significantly smaller or larger than other features, which 
