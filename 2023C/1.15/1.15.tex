@@ -87,25 +87,30 @@ players guess a country or region). The rules for the hard mode are as follows.
 
 We need to analyze the data provided by The New York Times and address the following tasks:
 \begin{itemize}  % 无序列表
-        \item \textbf{Problem 1:}Develop a model to explain the variations in the daily reported results and predict the 
+        \item \textbf{Problem 1: }Develop a model to explain the variations in the daily reported results and predict the 
         range of reported results for March 1, 2023. Additionally, analyze which word attributes influence 
         players' decisions to select Hard Mode.
-        \item \textbf{Problem 2:}Build a prediction model to estimate the percentage distribution of results (1, 2, 3, 4, 5, 6, X) 
+        \item \textbf{Problem 2: }Build a prediction model to estimate the percentage distribution of results (1, 2, 3, 4, 5, 6, X) 
         for a future day, with specific predictions for "EERIE" on March 1, 2023, and assess the model's accuracy.
-        \item \textbf{Problem 3:}Develop a classification model to categorize words by difficulty level and identify their attributes. 
+        \item \textbf{Problem 3: }Develop a classification model to categorize words by difficulty level and identify their attributes. 
         Conduct a detailed analysis for "EERIE" and evaluate the model's accuracy.
-        \item \textbf{Problem 4:}Explore and describe any other interesting insights or patterns found within the data.
+        \item \textbf{Problem 4: }Explore and describe any other interesting insights or patterns found within the data.
 \end{itemize}  % 无序列表结束
 
 \subsection{Our Work}
 
 \section{Assumptions and Notations}  % 二级标题
 \subsection{Assumptions}
-
-
+To simplify the model, we made the following assumptions:
+\begin{itemize}
+        \item \textbf{Assumption 1: }The percentages provided in the data accurately reflect the actual situation with minimal falsification and can be used directly.\\
+        \textbf{Justification:}Most people report their scores truthfully, as the reporting process is anonymous and has no consequences. Although some individuals 
+        may choose to report false scores, the daily volume of reports is large enough that this small fraction of false data will not significantly impact the overall percentages.
+        \item \textbf{Assumption 2: }The percentages of total reported scores can be used to represent the percentages of scores reported in Hard Mode.\\
+        \textbf{Justification:}Due to rounding, we found that the sum of the daily reported percentages does not equal exactly 1 but still reaches 0.99, which is 
+        very close to 1. Therefore, the reported percentages can effectively substitute for the actual percentages.
+\end{itemize}
 \subsection{Notations}
-
-
 %%%%%%%%%%%%%%%%%%%%%%%% 三线表 %%%%%%%%%%%%%%%%%%%%%%%%
 \begin{table}[!h]  % 表格
         \tabcolsep 84pt % 列间距
@@ -121,9 +126,10 @@ We need to analyze the data provided by The New York Times and address the follo
         $x_{t}$ & LSTM's input  \\
         $W_{f,i,c,o}$ & Bias  \\
         $b_{f,i,c,o}$ & Weight Matrix \\
+        $r$ & Pearson correlation\\
         \bottomrule  % 底线
         \end{tabular*}  % tabular*环境结束
-        \end{table}  % 表格结束
+\end{table}  % 表格结束
 %%%%%%%%%%%%%%%%%%%%%% 三线表结束 %%%%%%%%%%%%%%%%%%%%%%
 \section{Model 1-Prediction Model based on LSTM}  % 一级标题
 
@@ -162,7 +168,7 @@ are as follows.
 Machine learning algorithms are very sensitive to the input data values. To prevent certain results
  (e.g., Christmas 2022) from being significantly smaller or larger than other features, which 
  could cause biases in the algorithm's processing of data, we applied a formula to temporarily 
- scale all data to the range [0, 1] to facilitate computation. The formula is as follows (Formula 7).
+ scale all data to the range [0, 1] to facilitate computation. The formula is as follows.
  \begin{equation} 
         x_{scaled} =\frac{x-min(x)}{max(x)-min(x)} 
 \end{equation} 
@@ -177,7 +183,7 @@ the statistics may significantly drop because people need to spend time with fam
 According to website data\upcite{1}, in high-GDP countries, there are about 12 statutory 
 holidays a year on average, which means that there is almost always one holiday per month. Therefore, 
 using the previous 30 days of data would almost cover a holiday, leading to results that better 
-reflect the actual situation. Finally, we used the formula below (Formula 8) for inverse normalization 
+reflect the actual situation. Finally, we used the formula below for inverse normalization 
 to restore the data to its original form.
 
 \begin{equation} 
@@ -192,7 +198,7 @@ prediction results. The specific data is shown in Figures 2.
 \begin{figure}[h]  % 图片
         \small
         \centering  % 居中
-        \includegraphics[width=12cm]{figure/F2.pdf}  % 引入图片源
+        \includegraphics[width=18cm]{figure/F2.pdf}  % 引入图片源
         \caption{Actual vs Predicted Values} \label{Figure2}  % 标题与标签
 \end{figure}  % 图片结束
 We found that the results of this 
@@ -201,7 +207,7 @@ The results are shown in Figure 3.
 \begin{figure}[h]  % 图片
         \small
         \centering  % 居中
-        \includegraphics[width=12cm]{figure/F3.pdf}  % 引入图片源
+        \includegraphics[width=18cm]{figure/F3.pdf}  % 引入图片源
         \caption{Historical Data and Future Predictions} \label{Figure2}  % 标题与标签
 \end{figure}  % 图片结束
 
@@ -219,21 +225,100 @@ shown in Figure 4, reflecting the training dynamics throughout the process.
 \begin{figure}[h]  % 图片
         \small
         \centering  % 居中
-        \includegraphics[width=12cm]{figure/F4.png}  % 引入图片源
+        \includegraphics[width=14cm]{figure/F4.png}  % 引入图片源
         \caption{Model Loss During Training} \label{Figure4}  % 标题与标签
 \end{figure}  % 图片结束
 
 Based on our model, the predicted range for the number of reported results on March 1, 2023, is:
-\begin{equation}  % 公式，独占一行、居中，自动编号
+\begin{equation} 
         x_{March1,2023} =21137\pm 2.01425\%
-        \end{equation}  % 公式结束
-\subsection{Relationship of Word Attributes and Scores from Percentage}
+\end{equation}  
 
+\section{Relationship of Word Attributes and Scores from Percentage}
+
+\subsection{Score setting}
+The data provided in the problem is presented in percentages, which does not accurately reflect the actual scores for a given day. 
+Therefore, we define the score for a specific day as follows:
+\begin{equation}  
+        score= w_{1}\ast \sum_{i=1}^{6} i\ast p_{i}+w_{2}\ast p_{x}
+\end{equation}  
+The score is determined by the number of correct guesses, meaning that 4 successful attempts would result in a score of 4. Since 
+the game only has two possible outcomes, success or failure, we assign a weight of 0.5 to each outcome in order to balance the results.
+\subsection{Frequency setting}
+
+Considering that people from various industries are playing Wordle, we began to think about which types of words are more likely to be 
+guessed. Since people from different industries have varying levels of expertise, their vocabulary also tends to differ, but the words 
+they commonly use are generally those used in everyday life, such as "sleep," "lunch," and so on. Therefore, we believe that the frequency 
+of a word's appearance will impact the results. To address this, we used google website\upcite{2} to collect statistics on the frequency of each word 
+used in Wordle puzzles, denoted as $f_{word}$.
+\subsection{Regression Analysis}
+After defining frequency and score, we set them as the x-axis and y-axis, respectively, and plotted a scatter plot in Figure 5. Additionally, 
+we created heatmaps in Figure 6 for frequency, score, and the number of attempts, and calculated the Pearson correlation to measure their correlation,
+The formula is as follows:
+
+\begin{equation}  % 公式，独占一行、居中，自动编号
+        r=\frac{\sum (f_{word,i}-\bar{f_{word}})(score_{i}-\bar{score})}
+        {\sqrt{\sum (f_{word,i}-\bar{f_{word} }})^2\sqrt{\sum (score_{i}-\bar{score}})^2} 
+\end{equation}  % 公式结束
+
+\begin{figure}[h]  % 图片
+\centering  % 居中
+\begin{minipage}[c]{0.48\textwidth}  % 子页
+\centering  % 居中
+\includegraphics[width=7cm]{F5.png}  % 引入图片源
+\caption{Word frequency} \label{Figure5}  % 标题与标签
+\end{minipage}  % 子页结束
+\hspace{0.02\textwidth}
+\begin{minipage}[c]{0.48\textwidth}  % 子页
+\centering  % 居中
+\includegraphics[width=7cm]{F6.png}  % 引入图片源
+\caption{Pearson Correlation} \label{Figure6}  % 标题与标签
+\end{minipage}  % 子页结束
+\end{figure}  % 图片结束
+
+From the plots, we observed that the correlation between a word's frequency and its score is only 0.19, indicating a weak correlation. 
+We believe this is because, even though some words are frequently used in daily life, they may have synonyms that are more commonly used, 
+causing the original words to be forgotten. For example, the word “mummy” from October 23, 2022. Additionally, some words have had their 
+original meanings replaced by other associations. For instance, the word “watch” from March 11, 2022—due to the prevalence of smartphones, 
+people now check the time on their phones rather than looking at a watch.Ultimately, we concluded that the frequency of a word's usage is u
+nrelated to its performance in difficult modes.
 \section{Model 2}  % 一级标题
 
 \section{Model 3}  % 一级标题
 
 \section{Interesting Findings}  % 一级标题
+\subsection{4 Tries is the watershed}
+What we are interested in is that through the heatmap of frequency and score, we found that 4 tries have almost no correlation with score 
+and 5 tries, but there is a certain correlation with 3 tries.
+Therefore, we believe this is because the majority of players are able to arrive at the correct answer within 3 to 4 attempts, which keeps 
+4 tries in a dynamic balance. This makes 4 tries act as a constant in the statistical score, while a portion of players can only guess the 
+correct answer in 5 tries or 6 tries. These two groups of players do not interfere with each other, which is why there is no correlation. 
+We specifically plotted the correlation between 4 tries and 5 tries, and 3 tries for easier viewing. The detailed image is shown below.
+\begin{figure}[h]  % 图片
+        \centering  % 居中
+        \begin{minipage}[c]{0.32\textwidth}  % 子页
+        \centering  % 居中
+        \includegraphics[width=5cm]{i2.png}  % 引入图片源
+        \caption{4 and 3 tries'} \label{Figure9}  % 标题与标签
+        \end{minipage}  % 子页结束
+        \hspace{0.02\textwidth}
+        \begin{minipage}[c]{0.32\textwidth}  % 子页
+        \centering  % 居中
+        \includegraphics[width=5cm]{i1.png}  % 引入图片源
+        \caption{4 tries and score's correlation} \label{Figure8}  % 标题与标签
+        \end{minipage}  % 子页结束
+        \begin{minipage}[c]{0.32\textwidth}
+        \includegraphics[width=5cm]{i3.png}  % 引入图片源
+        \caption{4 and 5 tries'} \label{Figure10}  % 标题与标签
+        \end{minipage}
+\end{figure}  % 图片结束
+
+\begin{figure}[h]  % 图片
+        \small
+        \centering  % 居中
+        \includegraphics[width=14cm]{F6.png}  % 引入图片源
+        \caption{Pearson Correlation} \label{Figure6}  % 标题与标签
+\end{figure}  % 图片结束
 
 \section{Sensitivety Analysis}  % 一级标题
 
@@ -251,31 +336,6 @@ Based on our model, the predicted range for the number of reported results on Ma
 %\end{figure}  % 图片结束
 
 % This is Figure \eqref{fig:example}.  % 引用图表
-
-% This is a cite\cite{vaswani2017attention}.  % 引用文献
-
-\begin{equation}  % 公式，独占一行、居中，自动编号
-E = mc^2 \label{aa}  % 标签
-\end{equation}  % 公式结束
-
-\begin{equation}  % 公式，独占一行、居中
-\nonumber % 不编号
-E = mc^2
-\end{equation}  % 公式结束
-
-
-\begin{itemize}  % 无序列表
-        \item This is a item.
-        \item This is a item.
-\end{itemize}  % 无序列表结束
-
-
-\begin{itemize}  % 无序列表
-                \item This is a assumption.
-                \item This is a assumption.
-                \item This is a assumption.
-                \item This is a assumption.
- \end{itemize}  % 无序列表结束
 
  \textit{I love math.}  % 斜体
 
@@ -301,7 +361,9 @@ E = mc^2
 
 \begin{thebibliography}{99}
         \bibitem{1} https://holidays-calendar.net/
+        \bibitem{2} https://books.google.com/ngrams/
 \end{thebibliography}
+
 \printbibliography  % 打印引用文献列表
 
 %%%%%%%%%%%%%%%%%%%%%%% 正文结束 %%%%%%%%%%%%%%%%%%%%%%%
@@ -325,4 +387,4 @@ Here are simulation programmes we used in our model as follow.\\
 
 \end{appendices}  % 附录结束
 \end{document}  % 文档结束
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
